@@ -1,4 +1,4 @@
 #! /bin/bash
-xset b off&
 udiskie &
+xset b off&
 exec i3
