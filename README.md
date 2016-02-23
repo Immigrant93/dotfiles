@@ -1,2 +1,6 @@
 # dotfiles
-i3 and URXvt(zsh) confguration files
+
+- i3
+- urxvt
+- zsh
+- xinit
