@@ -17,7 +17,7 @@ Xft.hintstyle:              Full
 
 URxvt.depth:                32
 URxvt.geometry:             90x30
-URxvt.transparent:          true
+URxvt.transparent:          false
 URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
 ! URxvt.visualBell:           true
