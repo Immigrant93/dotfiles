@@ -186,7 +186,7 @@ bindsym $mod+l exec i3lock -i /home/marinos/Pictures/Wallpapers/lockscreen.png
 
 exec --no-startup-id "pulseaudio --start"
 exec --no-startup-id "setxkbmap -model pc105 -layout us,gr -option grp:alt_shift_toggle"
-exec exec ~/.fehbg
+exec_always ~/.fehbg
 
 client.focused #888888 #dddddd #222222 #2e9ef4
 client.focused_inactive #333333 #555555 #bbbbbb #484e50
