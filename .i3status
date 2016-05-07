@@ -1,13 +1,12 @@
 general {
-        colors = true
-	color_good = "#BBBBBB"
-	color_bad = "#CC1616"
-	color_degraded = "#55858E"
-        interval = 2
+    colors = true
+    color_good = "#CCCCCC"
+    color_bad = "#CC1616"
+    color_degraded = "#55858E"
+    interval = 2
 }
 
 order += "disk /"
-order += "cpu_usage"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "volume master"
@@ -17,10 +16,6 @@ order += "tztime local"
 
 disk "/" {
         format = "  %avail"
-}
-
-cpu_usage {
-        format = " %usage "
 }
 
 wireless _first_ {
@@ -35,7 +30,7 @@ ethernet _first_ {
 
 volume master {
    format = " %volume"
-   format_muted = ""2
+   format_muted = ""
    device = "default"
    mixer = "Master"
    mixer_idx = 0
