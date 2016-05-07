@@ -1,8 +1,8 @@
 set $mod Mod4
 font pango: Ubuntu 9
-new_window normal
+new_window 1pixel
 new_float normal
-hide_edge_borders both
+hide_edge_borders none
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -13,8 +13,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# Rofi Configuration
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 300 -opacity "95" -bw 0 -bc "#2f343f" -bg "#2f343f" -fg "#f3f4f5" -hlbg "#2f343f" -hlfg "#9575cd" -font "Inconsolata 14"
+# dmenu configuration
+bindsym $mod+d exec dmenu_run
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -54,16 +54,16 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:"
-set $ws9 "9:"
-set $ws10 "10:"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
+set $ws8 "8: "
+set $ws9 "9: "
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -125,15 +125,18 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  status_command i3status
-  tray_output primary
+  status_command    i3status
+  tray_output       none
+  position          bottom
+  workspace_buttons yes
+
   colors {
     separator #666666
-    background #333333
-    statusline #bbbbbb
-    focused_workspace #888888 #dddddd #222222
+    background #000000
+    statusline #f0f0f0
+    focused_workspace #888888 #e9e9e9 #222222
     active_workspace #333333 #555555 #bbbbbb
-    inactive_workspace #333333 #555555 #bbbbbb
+    inactive_workspace #333333 #181818 #bbbbbb
     urgent_workspace #2f343a #900000 #ffffff
   }
 }
@@ -141,8 +144,8 @@ bar {
 # Multimedia Keys
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
@@ -155,8 +158,8 @@ bindsym Print exec scrot -e 'mv $f ~/Pictures/Screenshots'
 exec --no-startup-id "pulseaudio --start"
 exec --no-startup-id "setxkbmap -model pc105 -layout us,gr -option grp:alt_shift_toggle"
 exec --no-startup-id ~/.fehbg
+exec --no-startup-id "xrandr --setprovideroffloadsink nouveau Intel" 
 
-exec --no-startup-id compton -b
 exec xset -dpms
 exec xset s off
 exec xset b off
