@@ -1,3 +1,4 @@
+
 !-------------------------------------------------------------------------------
 ! Xft settings
 !-------------------------------------------------------------------------------
@@ -23,8 +24,8 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           false
-URxvt*font: xft:Monospace:pixelsize=14
-URxvt*boldFont: xft:Monospace:pixelsize=14
+URxvt*font: xft:Monospace:pixelsize=13
+URxvt*boldFont: xft:Monospace:pixelsize=13
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -40,7 +41,7 @@ URxvt.matcher.button:       1
 URxvt.urlLauncher:          firefox
 
 ! Set Copy/Paste
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
 URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
 
 ! Disable the stupid ctrl+shift 'feature'
@@ -55,33 +56,38 @@ URxvt.cursorUnderline:      false
 ! Pointer
 URxvt.pointerBlank:         true
 
-! Color Theme
-URxvt.transparent:	true
-URxvt*background: #000000
-URxvt*foreground: #DEDEDE
-URxvt*colorUL: #86a2b0
+! modified tango color scheme
+URxvt*background: #262626
+URxvt*foreground: #d9e6f2
 
 ! black
-URxvt*color0  : #2E3436
-URxvt*color8  : #555753
+URxvt*color0: #141414
+URxvt*color8: #262626
+
 ! red
-URxvt*color1  : #CC0000
-URxvt*color9  : #EF2929
+URxvt*color1: #cf3294
+URxvt*color9: #d573b7
+
 ! green
-URxvt*color2  : #4E9A06
-URxvt*color10 : #8AE234
+URxvt*color2: #81cc47
+URxvt*color10: #a5d288
+
 ! yellow
-URxvt*color3  : #C4A000
-URxvt*color11 : #FCE94F
+URxvt*color3: #cf7f47
+URxvt*color11: #d5a288
+
 ! blue
-URxvt*color4  : #3465A4
-URxvt*color12 : #729FCF
+URxvt*color4: #357fe2
+URxvt*color12: #75a2e7
+
 ! magenta
-URxvt*color5  : #75507B
-URxvt*color13 : #AD7FA8
+URxvt*color5: #8132e2
+URxvt*color13: #a573e7
+
 ! cyan
-URxvt*color6  : #06989A
-URxvt*color14 : #34E2E2
+URxvt*color6: #35cc94
+URxvt*color14: #75d2b7
+
 ! white
-URxvt*color7  : #D3D7CF
-URxvt*color15 : #EEEEEC
+URxvt*color7: #dbdbdb
+URxvt*color15: #ffffff
