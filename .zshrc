@@ -83,4 +83,3 @@ export LANG=en_US.UTF-8
 alias zshconfig="nano ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=/usr/bin/vim
-
