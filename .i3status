@@ -1,7 +1,7 @@
 general {
     colors = true
     color_good = "#CCCCCC"
-    color_bad = "#CC1616"
+    color_bad = "#cc6666"
     color_degraded = "#55858E"
     interval = 2
 }
@@ -37,10 +37,10 @@ volume master {
 }
 
 battery 0 {
-        format = " %percentage %remaining"
+        format = " %percentage %remaining"
         last_full_capacity = true
 }
 
 tztime local {
-        format = "%d/%m/%Y %H:%M"
+        format = " %d/%m/%Y %H:%M"
 }
