@@ -6,35 +6,8 @@ general {
     interval = 2
 }
 
-order += "disk /"
-order += "wireless _first_"
-order += "ethernet _first_"
-order += "volume master"
 order += "battery 0"
 order += "tztime local"
-
-
-disk "/" {
-        format = "  %avail"
-}
-
-wireless _first_ {
-        format_up = " %quality"
-        format_down = " down"
-}
-
-ethernet _first_ {
-        format_up = " %ip"
-        format_down = " down"
-}
-
-volume master {
-   format = " %volume"
-   format_muted = ""
-   device = "default"
-   mixer = "Master"
-   mixer_idx = 0
-}
 
 battery 0 {
         format = " %percentage %remaining"
