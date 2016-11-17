@@ -26,12 +26,21 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# disable terminal beep
 xset -dpms
 xset s off
 xset b off
+
+# set desktop background
 xsetroot -solid "#222222"
+
+# set intel backlight 
 xbacklight -set 25
+
+# configure keyboard layout Ctrl+Alt to switch between us,gr
 setxkbmap -model pc105 -layout us,gr -option grp:ctrl_alt_toggle
+
+# dwm status bar
 while true
 do
   VOL=$(amixer get Master | tail -n1 | awk '{ print $5 }' | tr -d '[]')
@@ -41,4 +50,5 @@ do
   sleep 1s
 done&
 
+# start dwm 
 exec /home/marinos/.dwm/dwm
