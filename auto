@@ -1,0 +1,12 @@
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+rxvt-unicode rxvt-unicode-termnifo urxvt-perls 
+curl git vim htop 
+chromium firefox 
+pcmanfm gvfs vlc 
+nvidia / bumblebee stuff
+alsa / pulseaudio stuff
+probably sublime-text , packagecontrol.io/install st3
+lxappearance numix-theme / numix-icon-theme
+netbeans - c/c++ version
+openjdk / openjre
