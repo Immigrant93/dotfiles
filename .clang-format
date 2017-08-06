@@ -1,24 +1,21 @@
 # We'll use defaults from the LLVM style, but with 4 columns indentation.
-BasedOnStyle: WebKit 
+BasedOnStyle: WebKit
 IndentWidth: 4
 ---
 Language: Cpp
 # Force pointers to the type for C++.
 DerivePointerAlignment: false
 PointerAlignment: Left
-
-AlignAfterOpenBracket (BAS_Align)
-AlignConsecutiveAssignments (true)
-AlignEscapedNewlines (ENAS_Right)
-AlignOperands (true)
-AlignTrailingComments (true)
-AllowShortBlocksOnASingleLine (true)
-AllowShortCaseLabelsOnASingleLine (true)
-AllowShortFunctionsOnASingleLine (SFS_All)
-AllowShortIfStatementsOnASingleLine (true)
-AllowShortLoopsOnASingleLine (true)
-AlwaysBreakBeforeMultilineStrings (false)
-AlwaysBreakTemplateDeclarations (true)
-BinPackArguments (false)
-BinPackParameters (false)
-BreakBeforeTernaryOperators (true)
+AlignConsecutiveAssignments: true
+AlignOperands: true
+AlignTrailingComments: true
+AllowShortBlocksOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: true
+BinPackArguments: false
+BinPackParameters: false
+BreakBeforeTernaryOperators: true
+SortIncludes: false
