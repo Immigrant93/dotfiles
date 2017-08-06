@@ -1,0 +1,8 @@
+while(true)
+do
+    VOL=$(amixer get Master | tail -n1 | awk '{ print $5 }' | tr -d '[]')
+    DT=$(date +"%b %d, %Y %H:%M")
+    BAT=$(cat /sys/class/power_supply/BAT0/capacity)
+    xsetroot -name "[vol: $VOL][bat: $BAT%][$DT]"
+    sleep 2s
+done
