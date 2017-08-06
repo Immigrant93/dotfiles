@@ -1,8 +1,13 @@
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+export ZSH=/home/marinos/.oh-my-zsh
+export EDITOR="vim"
 ZSH_THEME="bureau"
-# pastebin
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 alias pb="curl -F c=@- https://ptpb.pw/\?u\=1"
-# nouveau driver
-alias nv="vblank_mode=0 DRI_PRIME=1"
-
+alias :update="pacaur -Syu"
+alias :install="pacaur -S"
+alias :search="pacaur -Ss"
+alias :remove="pacaur -R"
+alias :purge="pacaur -Rsn"
 alias :q="exit"
