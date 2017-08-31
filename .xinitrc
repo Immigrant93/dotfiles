@@ -17,4 +17,4 @@ xrdb -merge ~/.Xresources
 # dwm status bar
 ~/.dwm_status &
 
-exec /home/marinos/.dwm/dwm
+exec dwm
