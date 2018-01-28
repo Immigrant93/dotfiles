@@ -1,0 +1,6 @@
+#! /bin/bash
+
+CHANNEL=$1
+QUALITY=$2
+
+streamlink -p mpv twitch.tv/$CHANNEL $QUALITY

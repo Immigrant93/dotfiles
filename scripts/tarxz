@@ -1,0 +1,45 @@
+#! /bin/bash
+
+help() {
+
+	echo "Parameters:"
+	echo -e "\t-f | --file) The output filename without extension."
+	echo -e "\t-- files to compress after '--'"
+	echo -e "\t-h | --help) Display this help menu"
+	echo 
+	echo "Usage Example:"
+	echo -e "\t$0 -f output.tar.xz -- dir1 dir2 filename1 filename2"
+	echo
+}
+
+OUTPUT=""
+FILES=""
+
+if [ $# -gt 0 ]; then
+	while true; do
+		case "$1" in 
+			-f | --file )
+				OUTPUT=$2
+				shift 2
+				;;
+			-h | --help )
+				help
+				exit
+				;;
+			--)
+				shift 1
+				break
+				;;
+		esac
+	done
+else
+	help
+	exit
+fi
+
+for i in "$@" 
+do
+	FILES="$FILES $i"
+done
+
+tar -cvf - $FILES | xz -9 -c - > $OUTPUT.tar.xz
