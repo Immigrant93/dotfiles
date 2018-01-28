@@ -33,7 +33,7 @@ URxvt.iso14755_52: false
 
 !urxvt color scheme:
 
-URxvt*background: #2B2B2B
+URxvt*background: #1B1B1B
 URxvt*foreground: #DEDEDE
 
 URxvt*colorUL: #86a2b0
