@@ -8,7 +8,7 @@ help() {
 	echo -e "\t-h | --help) Display this help menu"
 	echo 
 	echo "Usage Example:"
-	echo -e "\t$0 -f output.tar.xz -- dir1 dir2 filename1 filename2"
+	echo -e "\t$0 -f output -- dir1 dir2 filename1 filename2"
 	echo
 }
 
