@@ -35,12 +35,14 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
+Plugin 'bagrat/vim-workspace'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd vimenter * NERDTree
+autocmd vimenter * Tagbar
 
 " Clang Complete Setup
 let g:clang_use_library=1
@@ -85,7 +87,9 @@ nnoremap <C-l> <C-w>l
 let g:C_Ctrl_j = 'off'
 
 " Tagbar
-nnoremap <leader>l :Tagbar<CR>
+nnoremap <F9> :TagbarToggle<CR>
+let g:tagbar_compact = 1
+let g:tagbar_iconchars = ['+', '-']
 
 " Tcomment
 nnoremap <leader>c<space> :TComment<CR>
@@ -99,10 +103,12 @@ nnoremap <leader>2 :WSNext<CR>
 nnoremap <leader>e :WSTabNew<CR>
 nnoremap <leader>3 :WSClose<CR>
 nnoremap <leader>4 :tabclose<CR>
-nnoremap <leader>s :A<CR>
+
+nnoremap <F1> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
 
 " Function keys for general purpose
-nnoremap <F1> :NERDTreeToggle<CR>
 nnoremap <F2> :w<CR>
 inoremap <F2> <ESC>:w<CR>i
 nnoremap <F7> :!make<CR>
