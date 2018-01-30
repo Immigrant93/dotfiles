@@ -19,7 +19,8 @@ colorscheme termschool
 nnoremap <F1> :NERDTreeToggle<CR>
 nnoremap <F2> :w<CR>
 inoremap <F2> <ESC>:w<CR>i
-nnoremap <F7> :make!<CR><CR>
+map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+nnoremap <F7> :make!<CR>
 
 set nocompatible              " be iMproved, required 
 filetype off                  " required
