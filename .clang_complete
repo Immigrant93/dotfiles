@@ -1,4 +1,5 @@
 -DDEBUG
+-Iinclude/
 -I/usr/include/
 -I/usr/local/include/
 -std=c89
