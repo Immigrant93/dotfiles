@@ -1,4 +1,4 @@
-set tabstop=3
+set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
@@ -24,27 +24,9 @@ set t_Co=256
 colorscheme termschool
 
 nnoremap <F1> :NERDTreeToggle<CR>
-nmap <F2> :w<CR>
-imap <F2> <ESC>:w<CR>i
-map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
-map <F7> :make!<CR>
-
-if &diff
-  ” diff settings
-  map <M-Down> ]c
-  map <M-Up> [c
-  map <M-Left> do
-  map <M-Right> dp
-  map <F9> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg
-else
-  " spell settings
-  :setlocal spell spelllang=en
-  " set the spellfile - folders must exist
-  set spellfile=~/.vim/spellfile.add
-  map <M-Down> ]s
-  map <M-Up> [s
-endif
-
+nnoremap <F2> :w<CR>
+inoremap <F2> <ESC>:w<CR>i
+nnoremap <F7> :make!<CR>
 set nocompatible              " be iMproved, required 
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -55,6 +37,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -81,3 +64,20 @@ set completeopt=menu,menuone
 set pumheight=20
 let g:clang_user_options='-std=c89'
 let g:clang_complete_macros=1
+
+" Syntastic setup
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+inoremap <F3> <ESC>:SyntasticReset<CR>i
+nnoremap <F3> :SyntasticReset<CR>
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Fugitive setup
+set diffopt+=vertical
+nnoremap <F8> :Gdiff<CR>
