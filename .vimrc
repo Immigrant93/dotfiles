@@ -17,41 +17,6 @@ set noswapfile
 set t_Co=256
 colorscheme termschool
 
-" De-activate arrowkeys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
-" Easy window navigation
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-let g:C_Ctrl_j = 'off'
-
-" Tagbar
-nnoremap <leader>l :Tagbar<CR>
-
-" Tcomment
-nnoremap <leader>c<space> :TComment<CR>
-vnoremap <leader>c<space> :TComment<CR>
-
-" Tabs handling
-nnoremap <leader>q :tabp<CR>
-nnoremap <leader>w :tabn<CR>
-nnoremap <leader>1 :WSPrev<CR>
-nnoremap <leader>2 :WSNext<CR>
-nnoremap <leader>e :WSTabNew<CR>
-nnoremap <leader>3 :WSClose<CR>
-nnoremap <leader>4 :tabclose<CR>
-nnoremap <leader>s :A<CR>
-
-nnoremap <F1> :NERDTreeToggle<CR>
-nnoremap <F2> :w<CR>
-inoremap <F2> <ESC>:w<CR>i
-nnoremap <F7> :!make<CR>
-
 set nocompatible              " be iMproved, required 
 filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -111,3 +76,36 @@ nnoremap <Leader>gd :Gdiff<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gl :Glog<CR>
 set splitbelow
+
+" Easy window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+let g:C_Ctrl_j = 'off'
+
+" Tagbar
+nnoremap <leader>l :Tagbar<CR>
+
+" Tcomment
+nnoremap <leader>c<space> :TComment<CR>
+vnoremap <leader>c<space> :TComment<CR>
+
+" Tabs handling
+nnoremap <leader>q :tabp<CR>
+nnoremap <leader>w :tabn<CR>
+nnoremap <leader>1 :WSPrev<CR>
+nnoremap <leader>2 :WSNext<CR>
+nnoremap <leader>e :WSTabNew<CR>
+nnoremap <leader>3 :WSClose<CR>
+nnoremap <leader>4 :tabclose<CR>
+nnoremap <leader>s :A<CR>
+
+" Function keys for general purpose
+nnoremap <F1> :NERDTreeToggle<CR>
+nnoremap <F2> :w<CR>
+inoremap <F2> <ESC>:w<CR>i
+nnoremap <F7> :!make<CR>
+
+" Toggle between header/source
+nnoremap <leader>s :A<CR>
