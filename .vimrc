@@ -31,12 +31,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/tComment'
 Plugin 'vim-scripts/a.vim'
-Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'godlygeek/tabular'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
 Plugin 'bagrat/vim-workspace'
+Plugin 'justinmk/vim-syntax-extra'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
