@@ -1,6 +1,6 @@
 include config.mk
 
-SRC = main.c
+SRC := $(shell find . -name '*.c')
 OBJ = ${SRC:.c=.o}
 
 all: options ${PROJ}
@@ -13,7 +13,7 @@ options:
 
 .c.o:
 	@echo CC $<
-	@${CC} -c ${CFLAGS} $<
+	@${CC} -c ${CFLAGS} $< -o $@
 
 ${OBJ}: config.mk
 

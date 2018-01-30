@@ -1,7 +1,6 @@
 PROJ = main
-
 VERSION = 1.0
-
+CC = cc
 PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
 
@@ -10,5 +9,3 @@ LIBS = -L/usr/lib -L/usr/local/lib
 
 CFLAGS = -std=c89 -pedantic -Wall -Os ${INCS} -DVERSION=\"${VERSION}\"
 LDFLAGS = -s ${LIBS}
-
-CC = cc
