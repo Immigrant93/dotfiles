@@ -9,11 +9,6 @@ set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
 
-augroup project
-	autocmd!
-	autocmd BufRead,BufNewFile *.h, *.c set filetype=c
-augroup END
-
 syntax on
 set number
 set showmatch
