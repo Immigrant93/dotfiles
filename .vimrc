@@ -103,6 +103,7 @@ nnoremap <leader>2 :WSNext<CR>
 nnoremap <leader>e :WSTabNew<CR>
 nnoremap <leader>3 :WSClose<CR>
 nnoremap <leader>4 :tabclose<CR>
+set mouse=a
 
 nnoremap <F1> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '+'
