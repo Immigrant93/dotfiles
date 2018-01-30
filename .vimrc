@@ -23,14 +23,11 @@ set comments=sl:/*,mb:\ *,elx:\ */
 set t_Co=256
 colorscheme termschool
 
-map <F7> :make<CR>
-map <S-F7> :make clean all<CR>
-map <F12> <C-]>
-
 nnoremap <F1> :NERDTreeToggle<CR>
 nmap <F2> :w<CR>
 imap <F2> <ESC>:w<CR>i
 map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+map <F7> :make!<CR>
 
 if &diff
   ” diff settings
