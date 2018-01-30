@@ -23,6 +23,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
@@ -44,23 +45,12 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd vimenter * NERDTree
 autocmd vimenter * Tagbar
 
-" Clang Complete Setup
-let g:clang_use_library=1
-let g:clang_library_path='/usr/lib/'
-let g:clang_complete_auto=1
-let g:clang_hl_errors=1
-set conceallevel=2
-set concealcursor=inv
-let g:clang_snippets=1
-let g:clang_conceal_snippets=1 
-let g:clang_snippets_engine='clang_complete'
-set completeopt=menu,menuone
-set pumheight=20
-let g:clang_user_options='-std=c89'
-let g:clang_complete_macros=1
-let g:clang_complete_copen=1
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 
-" Syntastic setup
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -71,7 +61,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Fugitive setup
+" Fugitive
 set diffopt+=vertical
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gd :Gdiff<CR>
