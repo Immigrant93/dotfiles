@@ -23,7 +23,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Rip-Rip/clang_complete'
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Rip-Rip/clang_complete'
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
@@ -41,11 +42,16 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Clang Complete
-let g:clang_complete_copen = 1
-let g:clang_periodic_quickfix = 1
-let g:clang_snippets = 1
-let g:clang_complete_macros = 1
-set conceallevel=2 
+" let g:clang_complete_copen = 1
+" let g:clang_periodic_quickfix = 1
+" let g:clang_snippets = 1
+" let g:clang_complete_macros = 1
+" set conceallevel=2 
+
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd vimenter * NERDTree

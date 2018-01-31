@@ -1,4 +1,3 @@
-# Partially stolen from https://bitbucket.org/mblum/libgp/src/2537ea7329ef/.ycm_extra_conf.py
 import os
 import ycm_core
 
@@ -6,13 +5,12 @@ import ycm_core
 # compilation database set (by default, one is not set).
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
 flags = [
-    '-Wall',
-    '-std=c89',
-    '-x', 'c',
-    '-isystem', '/usr/include',
-    '-isystem', '/usr/local/include',
-    '-I', 'include',
-    '-I.',
+'-Wall', '-Wextra', '-Werror',
+'-DNDEBUG', '-DUSE_CLANG_COMPLETER',
+'-std=c89', '-x','c',
+'-isystem', '/usr/include',
+'-isystem', '/usr/local/include',
+'-I.',
 ]
 
 compilation_database_folder = ''
@@ -71,5 +69,5 @@ def FlagsForFile( filename ):
 
   return {
     'flags': final_flags,
-    'do_cache': True
+    'do_cache': True,
   }
