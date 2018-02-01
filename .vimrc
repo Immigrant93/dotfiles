@@ -38,7 +38,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
 Plugin 'bagrat/vim-workspace'
 Plugin 'justinmk/vim-syntax-extra'
-Plugin 'vim-scripts/Conque-GDB'
+" Plugin 'vim-scripts/Conque-GDB'
+Plugin 'tommcdo/vim-exchange'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -54,10 +55,6 @@ filetype plugin indent on    " required
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd vimenter * NERDTree
-autocmd vimenter * Tagbar
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -106,6 +103,7 @@ nnoremap <leader>3 :WSClose<CR>
 nnoremap <leader>4 :tabclose<CR>
 set mouse=a
 
+" NERDTree
 nnoremap <F1> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
@@ -154,6 +152,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " ConqueGDB Setting
-let g:ConqueTerm_Color=2
-let g:ConqueTerm_CloseOnEnd=1
-let g:ConqueTerm_StartMessages=0
+" let g:ConqueTerm_Color=2
+" let g:ConqueTerm_CloseOnEnd=1
+" let g:ConqueTerm_StartMessages=0
