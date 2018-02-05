@@ -49,4 +49,4 @@ $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
 	$(CC) $(CFLAGS) $(INC) -c -o $@ $<
 
 #Non-File Targets
-.PHONY: all remake clean resources
+.PHONY: all clean remake
