@@ -1,0 +1,45 @@
+#! /bin/bash
+
+RESOLUTION="1366x768"
+FRAMERATE=30
+OUTPUT="output"
+
+function help {
+	echo -e "\t-h | --help) Display help menu"
+	echo -e "\t-o | --output) Default output.mkv | Extension .mkv appends automatically"
+	echo -e "\t-f | --framerate) Default: 30"
+	echo -e "\t-r | --resolution) Default: 1366x768"
+}
+
+if [ $# -eq 0 ]; then
+	help
+	exit
+fi
+
+while true;
+do
+	case $1 in
+		-o | --output)
+			OUTPUT=$2
+			shift 2
+			;;
+		-f | --framerate)
+			FRAMERATE=$2
+			shift 2
+			;;
+		-r | --resolution)
+			RESOLUTION=$2
+			shift 2
+			;;
+		-h | --help)
+			help
+			exit
+			;;
+		--)
+			break
+			;;
+	esac
+done
+
+
+ffmpeg -f alsa -i pulse -f x11grab -r ${FRAMERATE} -s ${RESOLUTION} -i :0.0 -acodec pcm_s16le -vcodec libx264 -preset ultrafast -threads 0 ${OUTPUT}.mkv
