@@ -13,6 +13,7 @@ syntax on
 set number
 set showmatch
 set noswapfile
+autocmd BufNewFile,BufRead *.h,*.c set filetype=c
 
 set t_Co=256
 colorscheme termschool
@@ -24,7 +25,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-" Plugin 'Rip-Rip/clang_complete'
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tpope/vim-fugitive'
@@ -38,23 +38,17 @@ Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
 Plugin 'bagrat/vim-workspace'
 Plugin 'justinmk/vim-syntax-extra'
-" Plugin 'vim-scripts/Conque-GDB'
 Plugin 'tommcdo/vim-exchange'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Clang Complete
-" let g:clang_complete_copen = 1
-" let g:clang_periodic_quickfix = 1
-" let g:clang_snippets = 1
-" let g:clang_complete_macros = 1
-" set conceallevel=2 
-
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_collect_identifiers_from_tags_files = 0
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
+nnoremap <F12> :YcmCompleter GoTo<CR>
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -94,13 +88,9 @@ nnoremap <leader>c<space> :TComment<CR>
 vnoremap <leader>c<space> :TComment<CR>
 
 " Tabs handling
-nnoremap <leader>q :tabp<CR>
-nnoremap <leader>w :tabn<CR>
 nnoremap <leader>1 :WSPrev<CR>
 nnoremap <leader>2 :WSNext<CR>
-nnoremap <leader>e :WSTabNew<CR>
 nnoremap <leader>3 :WSClose<CR>
-nnoremap <leader>4 :tabclose<CR>
 set mouse=a
 
 " NERDTree
@@ -113,45 +103,9 @@ nnoremap <F2> :w<CR>
 inoremap <F2> <ESC>:w<CR>i
 nnoremap <F7> :!make<CR>
 
-" Toggle between header/source
-nnoremap <leader>s :A<CR>
-
-"" If system setting are correct and install font from powerline
-"" may not this following symbol setting
-"=========================================
-" unicode symbols
-"let g:airline_left_sep = '»'
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '«'
-"let g:airline_right_sep = '◀'
-"let g:airline_symbols.linenr = '␊'
-"let g:airline_symbols.linenr = '␤'
-"let g:airline_symbols.linenr = '¶'
-"let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-"let g:airline_symbols.whitespace = 'Ξ'
-
-" airline symbols
-"let g:airline_left_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.branch = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr = '':
-
-"let g:airline_symbols.space = '"\ua0"
-"set fillchars+=stl:\ ,stlnc:\          " if see ^^^^^ in the statusline
-"=========================================
+" Airline
 let g:airline_theme='murmur'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
-" ConqueGDB Setting
-" let g:ConqueTerm_Color=2
-" let g:ConqueTerm_CloseOnEnd=1
-" let g:ConqueTerm_StartMessages=0
