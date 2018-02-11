@@ -6,7 +6,7 @@ xset s off
 xset b off
 
 # set desktop background
-xsetroot -solid "#1B1B1B"
+xsetroot -solid "#000000"
 
 # configure keyboard layout Ctrl+Alt to switch between us,gr
 setxkbmap -model pc105 -layout us,gr -option grp:ctrl_alt_toggle
